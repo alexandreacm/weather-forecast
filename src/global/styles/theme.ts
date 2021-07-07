@@ -1,10 +1,11 @@
 export const theme = {
     colors: {
-        primary: '#10233c',
-        secondary: '#265592',
+        primary: '#265592',
+        secondary: '#10233c',
         overlay: 'rgba(0,0,0,0.7)',
         highlight: '#ABB1CC',
-        heading: '#DDE3F0'
+        heading: '#DDE3F0',
+        white: '#FFF'
     },
     fonts: {
         title700: 'Rajdhani_700Bold',
