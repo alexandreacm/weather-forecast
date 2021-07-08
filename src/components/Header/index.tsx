@@ -1,9 +1,11 @@
 import React, { ReactNode } from 'react';
+import { Text, View } from 'react-native';
+
 import { LinearGradient } from 'expo-linear-gradient';
 import { BorderlessButton } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 import { Feather } from '@expo/vector-icons';
-import { Text, View } from 'react-native';
+
 
 import { theme } from '../../global/styles/theme';
 import { styles } from './styles';
@@ -11,9 +13,10 @@ import { styles } from './styles';
 type Props = {
     title: string;
     action?: ReactNode;
+    showBackButton?: boolean;
 }
 
-export function Header({ title, action }: Props) {
+export function Header({ title, action, showBackButton }: Props) {
     const { primary, secondary, heading } = theme.colors;
 
     const { goBack } = useNavigation();
@@ -25,15 +28,17 @@ export function Header({ title, action }: Props) {
     return (
         <LinearGradient
             style={styles.container}
-            colors={[primary, secondary,]}
-        >
-            <BorderlessButton onPress={handleGoBack}>
-                <Feather
-                    name="arrow-left"
-                    size={24}
-                    color={heading}
-                />
-            </BorderlessButton>
+            colors={[primary, secondary]}>
+
+            {
+                showBackButton ? <BorderlessButton onPress={handleGoBack}>
+                    <Feather
+                        name="arrow-left"
+                        size={24}
+                        color={heading}
+                    />
+                </BorderlessButton> : <View style={{ width: 24 }} />
+            }
 
             <Text style={styles.title}>
                 {title}
