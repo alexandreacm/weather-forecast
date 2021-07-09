@@ -10,10 +10,10 @@ const styles = StyleSheet.create({
 
 type Props = {
     backgroundColor: string;
-    isBarStyleDark: boolean;
+    isBarStyleDark?: boolean;
 }
 
-export function StatusBarColor({ backgroundColor, isBarStyleDark, ...rest }: Props) {
+export function StatusBarColor({ backgroundColor, isBarStyleDark = false, ...rest }: Props) {
     return (
         <SafeAreaView style={[styles.statusBar, { backgroundColor }]}>
             <StatusBar

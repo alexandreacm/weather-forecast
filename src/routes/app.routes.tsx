@@ -1,9 +1,7 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import { theme } from '../global/styles/theme';
-
-import { Home } from '../screens/Home';
+import { MaterialTopTab as Home } from './tabs/MaterialTopTab';
 const { Navigator, Screen } = createStackNavigator();
 
 export function AppRoutes() {
@@ -11,10 +9,6 @@ export function AppRoutes() {
         <Navigator headerMode="none">
             <Screen
                 name="Home"
-                component={Home}
-            />
-            <Screen
-                name="WeatherDetails"
                 component={Home}
             />
         </Navigator>

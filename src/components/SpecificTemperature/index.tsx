@@ -14,29 +14,29 @@ export function SpecificTemperature() {
         <View style={styles.containerSecondary}>
 
             <View style={styles.containerMorning}>
-                <Text style={styles.text}>Manhã</Text>
+                <Text style={styles.text}>Morning</Text>
                 <View style={styles.morning}>
                     <Image
                         source={Sun}
-                        style={{ width: 30, height: 30 }}
+                        style={styles.image}
                         resizeMode='contain' />
                     <Text style={styles.specificTemperature}>25°</Text>
                 </View>
             </View>
 
             <View style={styles.containerAfternoon}>
-                <Text style={styles.text}>Tarde</Text>
+                <Text style={styles.text}>Afternoon</Text>
                 <View style={styles.morning}>
                     <Image
                         source={rain}
-                        style={{ width: 30, height: 30 }}
+                        style={styles.image}
                         resizeMode='contain' />
                     <Text style={styles.specificTemperature}>35°</Text>
                 </View>
             </View>
 
             <View style={styles.containerEvening}>
-                <Text style={styles.text}>Noite</Text>
+                <Text style={styles.text}>Evening</Text>
                 <View style={styles.morning}>
                     <Image
                         source={rainDay}

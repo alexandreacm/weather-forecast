@@ -43,5 +43,9 @@ export const styles = StyleSheet.create({
         color: theme.colors.white,
         textAlign: 'center',
         marginLeft: 5
+    },
+    image: {
+        width: 30,
+        height: 30
     }
 });

@@ -1,12 +1,11 @@
-import { StyleSheet } from 'react-native';
-import { getStatusBarHeight } from 'react-native-iphone-x-helper';
+import { StyleSheet, Platform } from 'react-native';
 import { theme } from '../../global/styles/theme';
 
 export const styles = StyleSheet.create({
     container: {
         width: '100%',
-        height: 70,
-        paddingTop: getStatusBarHeight(),
+        height: 50,
+        paddingTop: Platform.OS == 'android' ? 0 : 20,
         paddingHorizontal: 24,
         flexDirection: 'row',
         justifyContent: 'center',

@@ -8,24 +8,20 @@ import {
 import { styles } from './styles';
 import { Background } from '../../components/Background';
 import { Header } from '../../components/Header';
-import { StatusBarColor } from '../../components/StatusBarConfig';
 import { theme } from '../../global/styles/theme';
 
 import { BorderlessButton } from 'react-native-gesture-handler';
 import { Fontisto } from '@expo/vector-icons';
 
-export function Home() {
+export function DetailsWether() {
     return (
         <>
-            <StatusBarColor
-                backgroundColor={theme.colors.primary}
-                isBarStyleDark={false} />
-            <Header showBackButton title="Rio Grande do sul, BR" action={
+            <Header title="Rio Grande do sul, BR" action={
                 <BorderlessButton>
                     <Fontisto
                         name="share"
-                        size={20}
-                        color={theme.colors.button}
+                        size={18}
+                        color={theme.colors.white}
                     />
                 </BorderlessButton>
             } />
