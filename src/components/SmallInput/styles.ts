@@ -3,15 +3,16 @@ import { theme } from '../../global/styles/theme';
 
 export const styles = StyleSheet.create({
   container: {
-    width: '90%',
+    width: '88%',
     height: 30,
     backgroundColor: theme.colors.white,
     color: theme.colors.black,
     fontFamily: theme.fonts.text400,
-    fontSize: 15
+    fontSize: 15,
+    textAlign: 'left'
   },
   viewInput: {
-    width: '100%',
+    width: '70%',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -19,7 +20,6 @@ export const styles = StyleSheet.create({
     borderWidth: 0.5,
     padding: 5,
     backgroundColor: theme.colors.white,
-    borderRadius: 8,
-    marginTop: 10
+    borderRadius: 8
   }
 });

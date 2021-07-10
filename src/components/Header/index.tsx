@@ -4,7 +4,7 @@ import { Text, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { BorderlessButton } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
-import { Feather } from '@expo/vector-icons';
+import { Feather, MaterialIcons } from '@expo/vector-icons';
 
 
 import { theme } from '../../global/styles/theme';
@@ -40,9 +40,16 @@ export function Header({ title, action, showBackButton }: Props) {
                 </BorderlessButton> : <View style={{ width: 24 }} />
             }
 
-            <Text style={styles.title}>
-                {title}
-            </Text>
+            <View style={styles.viewHeader}>
+                <MaterialIcons
+                    name="location-pin"
+                    size={15}
+                    color={heading}
+                />
+                <Text style={styles.title}>
+                    {title}
+                </Text>
+            </View>
 
             {
                 action

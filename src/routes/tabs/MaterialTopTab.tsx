@@ -6,7 +6,7 @@ import {
 
 import { Home } from '../../screens/Home';
 import { WeatherByCityName } from '../../screens/WeatherByCityName';
-import { WeatherZipCode } from '../../screens/WeatherZipCode';
+import { WeatherByZipCode } from '../../screens/WeatherByZipCode';
 
 import { theme } from '../../global/styles/theme';
 
@@ -39,7 +39,7 @@ export function MaterialTopTab() {
                 options={{ title: 'City Name' }} component={WeatherByCityName} />
             <Screen
                 name='ZipCode'
-                options={{ title: 'By Zip Code' }} component={WeatherZipCode} />
+                options={{ title: 'By Zip Code' }} component={WeatherByZipCode} />
         </Navigator>
     );
 }

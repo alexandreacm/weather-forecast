@@ -20,7 +20,7 @@ export function FooterTemperature({ tempMin = 0, tempMax = 0, pressure = 0, humi
             <View style={styles.footerLeft}>
 
                 <View style={styles.leftTemperature}>
-                    <Text style={styles.text}>Mínima</Text>
+                    <Text style={styles.text}>Minimum</Text>
                     <Text style={styles.text}>{`${tempMin}°C`}</Text>
                 </View>
 
@@ -32,7 +32,7 @@ export function FooterTemperature({ tempMin = 0, tempMax = 0, pressure = 0, humi
 
             <View style={styles.footerRight}>
                 <View style={styles.rightTemperature}>
-                    <Text style={styles.text}>Máxima</Text>
+                    <Text style={styles.text}>Maximum</Text>
                     <Text style={styles.text}>{`${tempMax}°C`}</Text>
                 </View>
                 <View style={styles.rightTemperature}>

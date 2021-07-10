@@ -17,7 +17,7 @@ import { api } from '../../services/api';
 import { Header } from '../../components/Header';
 import { theme } from '../../global/styles/theme';
 
-export function WeatherByCityName() {
+export function WeatherByZipCode() {
     const [errorMsg, setErrorMsg] = useState<string>('');
     const [dataMain, setDataMain] = useState<Main>();
     const [dataWeather, setDataWeather] = useState<Weather>();
