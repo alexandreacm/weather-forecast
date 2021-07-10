@@ -5,7 +5,8 @@ import {
 } from '@react-navigation/material-top-tabs';
 
 import { Home } from '../../screens/Home';
-import { DetailsWether } from '../../screens/DetailsWeather';
+import { WeatherByCityName } from '../../screens/WeatherByCityName';
+import { WeatherZipCode } from '../../screens/WeatherZipCode';
 
 import { theme } from '../../global/styles/theme';
 
@@ -35,10 +36,10 @@ export function MaterialTopTab() {
             <Screen name='Home' component={Home} />
             <Screen
                 name='CityName'
-                options={{ title: 'City Name' }} component={DetailsWether} />
+                options={{ title: 'City Name' }} component={WeatherByCityName} />
             <Screen
                 name='ZipCode'
-                options={{ title: 'By Zip Code' }} component={DetailsWether} />
+                options={{ title: 'By Zip Code' }} component={WeatherZipCode} />
         </Navigator>
     );
 }

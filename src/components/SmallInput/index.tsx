@@ -1,13 +1,24 @@
 import React from 'react';
-import { TextInput, TextInputProps } from 'react-native';
+import { TextInput, TextInputProps, View } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
+
+import { Feather } from '@expo/vector-icons';
 
 import { styles } from './styles';
+import { theme } from '../../global/styles/theme';
 
 export function SmallInput({ ...rest }: TextInputProps) {
     return (
-        <TextInput
-            style={styles.container}
-            {...rest}
-        />
+        <View style={styles.viewInput}>
+            <Feather
+                name="search"
+                size={25}
+                color={theme.colors.primary} />
+
+            <TextInput
+                style={styles.container}
+                {...rest}
+            />
+        </View>
     );
 }

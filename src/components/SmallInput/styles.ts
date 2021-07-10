@@ -3,16 +3,23 @@ import { theme } from '../../global/styles/theme';
 
 export const styles = StyleSheet.create({
   container: {
-    width: 48,
-    height: 48,
-    backgroundColor: theme.colors.secondary40,
-    color: theme.colors.heading,
-    borderRadius: 8,
+    width: '90%',
+    height: 30,
+    backgroundColor: theme.colors.white,
+    color: theme.colors.black,
     fontFamily: theme.fonts.text400,
-    fontSize: 13,
-    marginRight: 4,
-    textAlign: 'center',
-    borderWidth: 1,
-    borderColor: theme.colors.secondary50
+    fontSize: 15
+  },
+  viewInput: {
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    borderColor: theme.colors.primary,
+    borderWidth: 0.5,
+    padding: 5,
+    backgroundColor: theme.colors.white,
+    borderRadius: 8,
+    marginTop: 10
   }
 });

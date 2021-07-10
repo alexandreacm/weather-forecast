@@ -19,7 +19,8 @@ export const theme = {
         secondary30: '#495BCC',
         primaryBarColor: '#2773cb',
         secondaryBarColor: '#6196d8',
-        line: '#f3f3f3'
+        line: '#f3f3f3',
+        black: '#000'
     },
     fonts: {
         title700: 'Rajdhani_700Bold',

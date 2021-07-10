@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { Image, Text } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
@@ -30,7 +30,7 @@ export function CentralTemperature({ dataTemperature, RealFeel, mainWeather }: P
                     resizeMode='contain' />
 
                 <Text style={styles.textTemperature}>{`${dataTemperature}°C`}</Text>
-                <Text style={styles.textRealFeel}>{`RealFeel ${RealFeel}°C`}</Text>
+                <Text style={styles.textRealFeel}>{`Feels Like ${RealFeel}°C`}</Text>
 
             </LinearGradient>
         </LinearGradient>
