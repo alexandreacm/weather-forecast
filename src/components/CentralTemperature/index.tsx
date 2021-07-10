@@ -10,10 +10,11 @@ import Sun from '../../assets/sun.png';
 type Props = {
     dataTemperature: number;
     RealFeel: number;
+    mainWeather: string;
 }
 
 
-export function CentralTemperature({ dataTemperature = 0, RealFeel = 0 }: Props) {
+export function CentralTemperature({ dataTemperature, RealFeel, mainWeather }: Props) {
     const { primaryBarColor, secondaryBarColor, secondary30 } = theme.colors;
 
     return (
@@ -24,7 +25,7 @@ export function CentralTemperature({ dataTemperature = 0, RealFeel = 0 }: Props)
                 style={styles.internalCircle}
                 colors={[primaryBarColor, secondary30]}>
                 <Image
-                    source={Sun}
+                    source={mainWeather != 'Clouds' ? Sun : ''}
                     style={styles.image}
                     resizeMode='contain' />
 
