@@ -10,6 +10,16 @@ export const styles = StyleSheet.create({
         fontFamily: theme.fonts.text500,
         color: theme.colors.white,
         fontSize: 16,
-        marginVertical: 15
+        marginVertical: 14
+    },
+    errorMsg: {
+        width: '100%',
+        backgroundColor: theme.colors.button,
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 5
+    },
+    errorMsgText: {
+        color: theme.colors.white
     }
 });

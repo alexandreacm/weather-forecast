@@ -14,8 +14,8 @@ export const styles = StyleSheet.create({
     title: {
         flex: 1,
         textAlign: 'center',
-        fontFamily: theme.fonts.title500,
-        fontSize: 16,
+        fontFamily: theme.fonts.text500,
+        fontSize: 15,
         color: theme.colors.heading,
     }
 });

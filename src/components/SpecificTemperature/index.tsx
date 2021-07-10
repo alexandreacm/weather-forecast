@@ -7,9 +7,13 @@ import { styles } from './styles';
 import Sun from '../../assets/sun.png';
 import rain from '../../assets/rain.png';
 import rainDay from '../../assets/rainy-day.png';
+import { Main } from '../../screens/Home/models/Main';
 
+type Props = {
+    data: Main
+}
 
-export function SpecificTemperature() {
+export function SpecificTemperature({ data }: Props) {
     return (
         <View style={styles.containerSecondary}>
 
@@ -40,7 +44,7 @@ export function SpecificTemperature() {
                 <View style={styles.morning}>
                     <Image
                         source={rainDay}
-                        style={{ width: 30, height: 30 }}
+                        style={styles.image}
                         resizeMode='contain' />
                     <Text style={styles.specificTemperature}>20°</Text>
                 </View>

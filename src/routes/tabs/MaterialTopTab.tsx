@@ -34,8 +34,11 @@ export function MaterialTopTab() {
         <Navigator tabBarOptions={options}>
             <Screen name='Home' component={Home} />
             <Screen
-                name='DetailsWeather'
-                options={{ title: 'Weather Details' }} component={DetailsWether} />
+                name='CityName'
+                options={{ title: 'City Name' }} component={DetailsWether} />
+            <Screen
+                name='ZipCode'
+                options={{ title: 'By Zip Code' }} component={DetailsWether} />
         </Navigator>
     );
 }

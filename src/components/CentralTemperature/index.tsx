@@ -1,5 +1,5 @@
-import React from 'react';
-import { Image, Text } from  'react-native';
+import React, { ReactNode } from 'react';
+import { Image, Text } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 import { theme } from '../../global/styles/theme';
@@ -7,7 +7,13 @@ import { styles } from './styles';
 
 import Sun from '../../assets/sun.png';
 
-export function CentralTemperature() {
+type Props = {
+    dataTemperature: number;
+    RealFeel: number;
+}
+
+
+export function CentralTemperature({ dataTemperature = 0, RealFeel = 0 }: Props) {
     const { primaryBarColor, secondaryBarColor, secondary30 } = theme.colors;
 
     return (
@@ -19,11 +25,11 @@ export function CentralTemperature() {
                 colors={[primaryBarColor, secondary30]}>
                 <Image
                     source={Sun}
-                    style={{ width: 50, height: 50 }}
+                    style={styles.image}
                     resizeMode='contain' />
 
-                <Text style={styles.textTemperature}>22°</Text>
-                <Text style={styles.textRealFeel}>RealFeel 25°</Text>
+                <Text style={styles.textTemperature}>{`${dataTemperature}°C`}</Text>
+                <Text style={styles.textRealFeel}>{`RealFeel ${RealFeel}°C`}</Text>
 
             </LinearGradient>
         </LinearGradient>
