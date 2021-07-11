@@ -16,12 +16,12 @@ export const styles = StyleSheet.create({
         textAlign: 'center',
         fontFamily: theme.fonts.text500,
         fontSize: 15,
-        color: theme.colors.heading,
+        color: theme.colors.heading
     },
     viewHeader: {
-        width: 110,
-        alignItems: 'center',
+        width: 200,
         justifyContent: 'center',
+        alignItems: 'center',
         flexDirection: 'row'
     }
 });

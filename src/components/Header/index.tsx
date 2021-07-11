@@ -41,12 +41,13 @@ export function Header({ title, action, showBackButton }: Props) {
             }
 
             <View style={styles.viewHeader}>
-                <MaterialIcons
-                    name="location-pin"
-                    size={15}
-                    color={heading}
-                />
                 <Text style={styles.title}>
+                    <MaterialIcons
+                        name="location-pin"
+                        size={15}
+                        color={heading}
+                        style={{ marginRight: 10}}
+                    />
                     {title}
                 </Text>
             </View>

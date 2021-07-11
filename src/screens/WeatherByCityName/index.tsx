@@ -57,49 +57,52 @@ export function WeatherByCityName() {
                 ) : (
                     <Background>
                         {
-                            errorMsg !== '' && (
+                            errorMsg !== '' ? (
                                 <View style={styles.errorMsg}>
                                     <Text style={styles.errorMsgText}>{errorMsg}</Text>
                                 </View>
+                            ) : (
+                                <>
+                                    <View style={styles.viewZipCode}>
+                                        <SmallInput
+                                            placeholder='City Name'
+                                            autoCapitalize='none'
+                                            autoCorrect={false}
+                                            value={cityName}
+                                            onChangeText={setCityName}
+                                        />
+                                        <RectButton
+                                            onPress={loadWeather}
+                                            style={styles.rectButton}>
+                                            <Text style={{ color: theme.colors.white }}>Search</Text>
+                                        </RectButton>
+                                    </View>
+
+                                    <View style={styles.container}>
+                                        <CentralTemperature
+                                            dataTemperature={dataMain?.temp || 0}
+                                            RealFeel={dataMain?.feels_like || 0}
+                                            mainWeather={dataWeather?.main || ''}
+                                        />
+
+                                        <SpecificTemperature data={dataMain as Main} />
+                                    </View>
+
+                                    <View style={{ alignItems: 'center' }}>
+                                        <Text style={styles.text}>Weather Details</Text>
+                                    </View>
+
+                                    <View>
+                                        <FooterTemperature
+                                            tempMin={dataMain?.temp_min as number}
+                                            tempMax={dataMain?.temp_max as number}
+                                            pressure={dataMain?.pressure as number}
+                                            humidity={dataMain?.humidity as number}
+                                        />
+                                    </View>
+                                </>
                             )
                         }
-                        <View style={{ padding: 8, flex: 1, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                            <SmallInput
-                                placeholder='City Name'
-                                autoCapitalize='none'
-                                autoCorrect={false}
-                                value={cityName}
-                                onChangeText={setCityName}
-                            />
-                            <RectButton
-                                onPress={loadWeather}
-                                style={{ width: 90, height: 40, borderRadius: 45, alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(0,0,0,0.5)' }}>
-                                <Text style={{ color: theme.colors.white }}>Search</Text>
-                            </RectButton>
-                        </View>
-
-                        <View style={styles.container}>
-                            <CentralTemperature
-                                dataTemperature={dataMain?.temp || 0}
-                                RealFeel={dataMain?.feels_like || 0}
-                                mainWeather={dataWeather?.main || ''}
-                            />
-
-                            <SpecificTemperature data={dataMain as Main} />
-                        </View>
-
-                        <View style={{ alignItems: 'center' }}>
-                            <Text style={styles.text}>Weather Details</Text>
-                        </View>
-
-                        <View>
-                            <FooterTemperature
-                                tempMin={dataMain?.temp_min as number}
-                                tempMax={dataMain?.temp_max as number}
-                                pressure={dataMain?.pressure as number}
-                                humidity={dataMain?.humidity as number}
-                            />
-                        </View>
                     </Background>
                 )
             }

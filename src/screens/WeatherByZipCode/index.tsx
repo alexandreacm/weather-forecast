@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { View, Text, Alert, ScrollView } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
+import { MaskedTextInput } from "react-native-mask-text";
 
 import { Background } from '../../components/Background';
 import { CentralTemperature } from '../../components/CentralTemperature';
 import { SpecificTemperature } from '../../components/SpecificTemperature';
 import { FooterTemperature } from '../../components/FooterTemperature';
-import { SmallInput } from '../../components/SmallInput';
 import { Load } from '../../components/Load';
 
 import { styles } from './styles';
@@ -22,28 +22,35 @@ export function WeatherByZipCode() {
     const [dataMain, setDataMain] = useState<Main>();
     const [dataWeather, setDataWeather] = useState<Weather>();
     const [locationName, setLocationName] = useState<string>('');
-    const [cityName, setCityName] = useState<string>('');
+    const [zipCode, setZipCode] = useState<string>('');
     const [loading, setLoading] = useState<boolean>(false);
+
+    function resetValues() {
+        setDataWeather({} as Weather);
+        setDataMain({} as Main);
+    }
 
     async function loadWeather() {
         try {
 
-            if (cityName != '') {
+            if (zipCode != '') {
 
                 setLoading(true);
-                const { data: { main, sys: { country }, weather, name } } = await api.get(`?q=${cityName},BR&units=metric&appid=fc769c0cf9cfa067109b56dc0e14eee3`);
+                const { data: { main, sys: { country }, weather, name } } = await api.get(`?q=${zipCode},BR&units=metric&appid=fc769c0cf9cfa067109b56dc0e14eee3`);
 
                 setDataWeather(weather);
                 setDataMain(main);
                 setLocationName(`${name}, ${country}`);
             } else {
-                Alert.alert('City Name is required!!');
+                Alert.alert('Zip code is required!!');
             }
 
             setLoading(false);
+            setErrorMsg(``);
         } catch (error) {
+            setErrorMsg(`Zip code invalid`);
             setLoading(false);
-            setErrorMsg(error);
+            resetValues();
         }
     }
 
@@ -63,17 +70,23 @@ export function WeatherByZipCode() {
                                 </View>
                             )
                         }
-                        <View style={{ padding: 8, flex: 1, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                            <SmallInput
-                                placeholder='City Name'
-                                autoCapitalize='none'
-                                autoCorrect={false}
-                                value={cityName}
-                                onChangeText={setCityName}
-                            />
+                        <View style={styles.viewZipCode}>
+                            <View style={styles.viewInput}>
+                                <MaskedTextInput
+                                    mask='99999-999'
+                                    keyboardType='numeric'
+                                    style={styles.containerInput}
+                                    placeholder='Zip Code'
+                                    autoCapitalize='none'
+                                    autoCorrect={false}
+                                    value={zipCode}
+                                    onChangeText={setZipCode}
+                                />
+
+                            </View>
                             <RectButton
                                 onPress={loadWeather}
-                                style={{ width: 90, height: 40, borderRadius: 45, alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(0,0,0,0.5)' }}>
+                                style={styles.rectButton}>
                                 <Text style={{ color: theme.colors.white }}>Search</Text>
                             </RectButton>
                         </View>

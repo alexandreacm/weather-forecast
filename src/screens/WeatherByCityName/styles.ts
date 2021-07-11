@@ -21,5 +21,20 @@ export const styles = StyleSheet.create({
     },
     errorMsgText: {
         color: theme.colors.white
+    },
+    viewZipCode: {
+        padding: 8,
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'flex-start'
+    },
+    rectButton: {
+        width: 90,
+        height: 40,
+        borderRadius: 45,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'rgba(0,0,0,0.5)'
     }
 });

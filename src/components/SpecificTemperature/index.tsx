@@ -24,7 +24,7 @@ export function SpecificTemperature({ data }: Props) {
                         source={Sun}
                         style={styles.image}
                         resizeMode='contain' />
-                    <Text style={styles.specificTemperature}>25°</Text>
+                    <Text style={styles.specificTemperature}>0°</Text>
                 </View>
             </View>
 
@@ -35,7 +35,7 @@ export function SpecificTemperature({ data }: Props) {
                         source={rain}
                         style={styles.image}
                         resizeMode='contain' />
-                    <Text style={styles.specificTemperature}>35°</Text>
+                    <Text style={styles.specificTemperature}>0°</Text>
                 </View>
             </View>
 
@@ -46,7 +46,7 @@ export function SpecificTemperature({ data }: Props) {
                         source={rainDay}
                         style={styles.image}
                         resizeMode='contain' />
-                    <Text style={styles.specificTemperature}>20°</Text>
+                    <Text style={styles.specificTemperature}>0°</Text>
                 </View>
             </View>
         </View>

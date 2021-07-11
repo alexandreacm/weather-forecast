@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, Alert } from 'react-native';
+import { View, Text, Alert, ScrollView } from 'react-native';
 import * as Location from 'expo-location';
 
 import { Background } from '../../components/Background';
@@ -45,17 +45,17 @@ export function Home() {
     }, []);
 
     return (
-        <>
-            <Header title={locationName} />
-            {
-                errorMsg !== '' && (
-                    <View style={styles.errorMsg}>
-                        <Text style={styles.errorMsgText}>{errorMsg}</Text>
-                    </View>
-                )
-            }
+        <Background>
+            <ScrollView>
+                <Header title={locationName || 'No Address'} />
+                {
+                    errorMsg !== '' && (
+                        <View style={styles.errorMsg}>
+                            <Text style={styles.errorMsgText}>{errorMsg}</Text>
+                        </View>
+                    )
+                }
 
-            <Background>
                 <View style={styles.container}>
                     <CentralTemperature
                         dataTemperature={dataMain?.temp || 0}
@@ -78,7 +78,7 @@ export function Home() {
                         humidity={dataMain?.humidity as number}
                     />
                 </View>
-            </Background>
-        </>
+            </ScrollView>
+        </Background>
     );
 }
