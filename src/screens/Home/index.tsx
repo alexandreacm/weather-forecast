@@ -15,6 +15,8 @@ import { Weather } from './models/Weather';
 
 import { styles } from './styles';
 
+const {  APP_ID } = process.env;
+
 export function Home() {
     const [errorMsg, setErrorMsg] = useState<string>('');
     const [locationName, setLocationName] = useState<string>('');
@@ -32,8 +34,7 @@ export function Home() {
             const location: Location.LocationObject = await Location.getCurrentPositionAsync({});
 
             try {
-                //alert(JSON.stringify(location?.coords?.latitude));
-                const { data: { main, sys: { country }, weather, name } } = await api.get(`?lat=${location?.coords?.latitude}&lon=${location?.coords?.longitude}&units=metric&appid=fc769c0cf9cfa067109b56dc0e14eee3`)
+                const { data: { main, sys: { country }, weather, name } } = await api.get(`?lat=${location?.coords?.latitude}&lon=${location?.coords?.longitude}&units=metric&appid=${APP_ID}`)
 
                 setDataWeather(weather);
                 setDataMain(main);
