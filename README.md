@@ -13,7 +13,7 @@
 
 
 ## 💻 Project
-Application to help you Weather Forecast of Your Region.
+Application to help you consult the Weather Forecast of Your Region.
 
 ## :hammer_and_wrench: Features 
 
