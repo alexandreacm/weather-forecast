@@ -29,8 +29,9 @@ const options: MaterialTopTabBarOptions = {
     }
 };
 
+const { Navigator, Screen } = createMaterialTopTabNavigator();
+
 export function MaterialTopTab() {
-    const { Navigator, Screen } = createMaterialTopTabNavigator();
     return (
         <Navigator tabBarOptions={options}>
             <Screen name='Home' component={Home} />

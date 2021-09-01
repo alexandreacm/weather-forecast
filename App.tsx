@@ -10,6 +10,7 @@ import { Background } from './src/components/Background';
 import { StatusBarColor } from './src/components/StatusBarConfig';
 import { theme } from './src/global/styles/theme';
 
+//App
 export default function App() {
   const [fontsLoaded] = useFonts({
     Inter_400Regular,
